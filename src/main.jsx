@@ -5,11 +5,13 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { ProspectiveStudentLayout, NewStudentLayout, CurrentStudentLayout } from './layouts/StudentLayouts'
 import PlaceholderPage from './components/pages/PlaceholderPage'
+import ProspectiveStudentDashboard from './components/pages/ProspectiveStudentDashboard'
 import ProgramsPage from './components/pages/ProgramsPage'
 import ProgramsRoadmapPage from './components/pages/ProgramsRoadmapPage'
 import CourseReviewPage from './components/pages/CourseReviewPage'
 import CurrentStudentDashboard from './components/pages/CurrentStudentDashboard'
 import CoursesPage from './components/pages/CoursesPage'
+import MySchedulePage from './components/pages/MySchedulePage'
 import { Toaster } from "@/components/ui/sonner"
 import { ScheduleProvider } from "@/context/ScheduleContext"
 
@@ -21,7 +23,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="/" element={<App />} />
         
         <Route path="/prospective-student" element={<ProspectiveStudentLayout />}>
-          <Route index element={<PlaceholderPage title="Prospective Student Dashboard" />} />
+          <Route index element={<ProspectiveStudentDashboard />} />
           <Route path="programs" element={<ProgramsPage />} />
           <Route path="programs-roadmap" element={<ProgramsRoadmapPage />} />
           <Route path="course-reviews" element={<CourseReviewPage />} />
@@ -39,7 +41,7 @@ createRoot(document.getElementById('root')).render(
 
         <Route path="/current-student" element={<CurrentStudentLayout />}>
           <Route index element={<CurrentStudentDashboard />} />
-          <Route path="my-schedule" element={<PlaceholderPage title="My Schedule" />} />
+          <Route path="my-schedule" element={<MySchedulePage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="financial-hub" element={<PlaceholderPage title="Financial Hub" />} />
           <Route path="graduation-tracker" element={<PlaceholderPage title="Graduation Tracker" />} />

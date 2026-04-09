@@ -1,13 +1,20 @@
 import { useMemo, useState } from "react";
-import { useNavigate } from "react-router";
+import { useNavigate, useLocation } from "react-router";
 import { facultiesAndProgramData } from "@/data/mockData";
 import { Input } from "../ui/input";
 import { Search, ChevronLeft } from "lucide-react";
+import {
+  Card,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
 
 export default function ProgramsPage() {
   const navigate = useNavigate();
+  const location = useLocation();
   const [query, setQuery] = useState("");
-  const [selectedFaculty, setSelectedFaculty] = useState(null);
+  const [selectedFaculty, setSelectedFaculty] = useState(location.state?.selectedFaculty || null);
 
   const faculties = facultiesAndProgramData;
 
@@ -91,9 +98,8 @@ return (
             ) : (
               <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {visiblePrograms.map((program) => (
-                  <button
+                  <Card
                     key={program.name}
-                    type="button"
                     onClick={() =>
                       navigate("/prospective-student/programs-roadmap", {
                         state: {
@@ -102,17 +108,18 @@ return (
                         },
                       })
                     }
-                    className="group flex cursor-pointer flex-col gap-4 text-left"
+                    className="group cursor-pointer flex flex-col p-0 overflow-hidden hover:bg-muted/40 transition-colors text-left border-border"
                   >
-                    {/* Gray Image Placeholder - slightly taller for desktop */}
-                    <div className="aspect-video w-full rounded-xl bg-muted/80 transition-colors group-hover:bg-muted" />
-                    <div>
-                      <h2 className="font-medium text-foreground transition-colors group-hover:text-primary">
+                    <div className="aspect-video w-full bg-muted/80 transition-colors group-hover:bg-muted border-b border-border/50" />
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-base group-hover:text-foreground transition-colors">
                         {program.name}
-                      </h2>
-                      <p className="mt-1 text-sm text-muted-foreground">{program.degree}</p>
-                    </div>
-                  </button>
+                      </CardTitle>
+                      <CardDescription className="mt-1">
+                        {program.degree}
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
                 ))}
               </div>
             )}
@@ -127,22 +134,21 @@ return (
             ) : (
               <div className="grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
                 {matchingFaculties.map((faculty) => (
-                  <div
+                  <Card
                     key={faculty.faculty}
                     onClick={() => setSelectedFaculty(faculty.faculty)}
-                    className="group flex cursor-pointer flex-col gap-4"
+                    className="group cursor-pointer flex flex-col p-0 overflow-hidden hover:bg-muted/40 transition-colors text-left border-border"
                   >
-                    {/* Gray Image Placeholder */}
-                    <div className="aspect-video w-full rounded-xl bg-muted/80 transition-colors group-hover:bg-muted" />
-                    <div>
-                      <h2 className="font-medium text-foreground transition-colors group-hover:text-primary">
+                    <div className="aspect-video w-full bg-muted/80 transition-colors group-hover:bg-muted border-b border-border/50" />
+                    <CardHeader className="p-4">
+                      <CardTitle className="text-base group-hover:text-foreground transition-colors">
                         {faculty.faculty}
-                      </h2>
-                      <p className="mt-1 text-sm text-muted-foreground">
+                      </CardTitle>
+                      <CardDescription className="mt-1">
                         {faculty.programs.length} Programs
-                      </p>
-                    </div>
-                  </div>
+                      </CardDescription>
+                    </CardHeader>
+                  </Card>
                 ))}
               </div>
             )}

@@ -2,48 +2,50 @@ export const initialSchedule = [
   {
     day: "Monday",
     courses: [
-      { name: "CPS 616 - 091 LEC", time: "8AM - 10AM", location: "DCC208" },
-      { name: "MTH 108 - 011 TUT", time: "12PM - 1PM", location: "KHE118" },
+      { name: "CPS 40A - 011 LEC", time: "10AM - 12PM", location: "DCC 208" },
+      { name: "CPS 843 - 011 LEC", time: "2PM - 4PM", location: "ENG 103" }
     ]
   },
   {
     day: "Tuesday",
     courses: [
-      { name: "CPS 506 - 021 LEC", time: "10AM - 12PM", location: "ENG103" },
-      { name: "ENG 100 - 041 LEC", time: "2PM - 4PM", location: "VIC104" },
+      { name: "CPS 803 - 011 LEC", time: "9AM - 11AM", location: "KHS 239" },
     ]
   },
   {
     day: "Wednesday",
     courses: [
-      { name: "CPS 616 - 091 LEC", time: "8AM - 9AM", location: "DCC208" },
+      { name: "FIN 300 - 011 LEC", time: "1PM - 3PM", location: "VIC 104" },
     ]
   },
   {
     day: "Thursday",
     courses: [
-      { name: "CPS 506 - 021 LAB", time: "10AM - 11AM", location: "ENG103" },
-      { name: "MTH 108 - 011 LEC", time: "1PM - 3PM", location: "KHE118" },
+      { name: "CPS 803 - 021 LAB", time: "10AM - 11AM", location: "KHS 239" },
+      { name: "MTH 816 - 011 LEC", time: "2PM - 4PM", location: "LIB 72" },
     ]
   },
   {
     day: "Friday",
     courses: [
-      { name: "PHY 101 - 011 LEC", time: "9AM - 12PM", location: "KHS239" },
+      { name: "CPS 843 - 021 LAB", time: "11AM - 1PM", location: "ENG 101" }
     ]
   }
 ];
 
 export const mockCourseCatalog = [
-  { name: "CPS 109 - 011 LEC", time: "10AM - 12PM", location: "KHS 239" },
-  { name: "CPS 209 - 021 LAB", time: "2PM - 4PM", location: "ENG 103" },
-  { name: "MTH 108 - 011 TUT", time: "12PM - 1PM", location: "KHE 118" },
-  { name: "MTH 207 - 041 LEC", time: "8AM - 10AM", location: "DCC 208" },
-  { name: "ENG 100 - 041 LEC", time: "2PM - 4PM", location: "VIC 104" },
-  { name: "PHY 101 - 011 LEC", time: "9AM - 12PM", location: "KHS 239" },
-  { name: "CHY 103 - 031 LAB", time: "1PM - 4PM", location: "KHE 231" },
-  { name: "CPS 616 - 091 LEC", time: "8AM - 10AM", location: "DCC 208" },
-  { name: "CPS 506 - 021 LEC", time: "10AM - 12PM", location: "ENG 103" },
+  { id: "C1", courseCode: "CPS 109", name: "Computer Science I", prof: "Dr. Mason", day: "Monday", time: "10AM - 12PM", location: "KHS 239", credits: 1 },
+  { id: "C2", courseCode: "CPS 209", name: "Computer Science II", prof: "Dr. Hamza", day: "Tuesday", time: "2PM - 4PM", location: "ENG 103", credits: 1 },
+  { id: "C3", courseCode: "MTH 108", name: "Linear Algebra", prof: "Dr. Kolasa", day: "Wednesday", time: "12PM - 1PM", location: "KHE 118", credits: 1 },
+  { id: "C4", courseCode: "CPS 803", name: "Machine Learning", prof: "Dr. Dastour", day: "Tuesday", time: "9AM - 11AM", location: "KHS 239", credits: 1 },
+  { id: "C5", courseCode: "ENG 100", name: "Engineering Mechanics", prof: "Dr. El-Rabbany", day: "Friday", time: "2PM - 4PM", location: "VIC 104", credits: 1 },
+  { id: "C6", courseCode: "CPS 843", name: "Computer Vision", prof: "Dr. Yuan", day: "Monday", time: "2PM - 4PM", location: "ENG 103", credits: 1 },
+  { id: "C7", courseCode: "CHY 103", name: "General Chemistry", prof: "Dr. Gossage", day: "Tuesday", time: "1PM - 4PM", location: "KHE 231", credits: 1 },
+  { id: "C8", courseCode: "CPS 616", name: "Algorithms", prof: "Dr. Pan", day: "Wednesday", time: "1PM - 3PM", location: "DCC 208", credits: 1 },
+  { id: "C9", courseCode: "CPS 506", name: "Comparative Languages", prof: "Dr. Misic", day: "Monday", time: "10AM - 12PM", location: "ENG 103", credits: 1 },
+  { id: "C10", courseCode: "BLG 143", name: "Biology I", prof: "Dr. Arts", day: "Thursday", time: "3PM - 5PM", location: "KVS 101", credits: 1 },
+  { id: "C11", courseCode: "SOC 103", name: "How Society Works", prof: "Dr. Smith", day: "Tuesday", time: "9AM - 11AM", location: "DSQ 202", credits: 1 },
+  { id: "C12", courseCode: "CPS 706", name: "Computer Networks I", prof: "Dr. Hunter", day: "Monday", time: "1PM - 3PM", location: "SLC 508", credits: 1 },
 ];
 
 export const facultiesAndProgramData = [
@@ -127,10 +129,33 @@ export const programRoadmaps = {
   "Computer Science": {
     title: "Bachelor of Computer Science",
     years: [
-      { id: 1, label: "Year 1", courses: [{ id: "CPS109", name: "Computer Science I", roadmap: ["Variables", "Control Structures", "Functions", "Intro to OOP"] }] },
-      { id: 2, label: "Year 2", courses: [{ id: "CPS305", name: "Data Structures", roadmap: ["Arrays & Lists", "Stacks & Queues", "Trees", "Big-O Analysis"] }] },
-      { id: 3, label: "Year 3", courses: [{ id: "CPS506", name: "Comparative Languages", roadmap: ["Paradigms", "Functional", "Logic", "Concurrency"] }] },
-      { id: 4, label: "Year 4", courses: [{ id: "CPS40A", name: "Thesis Project", roadmap: ["Proposal", "Literature Review", "Implementation", "Defense"] }] }
+      { id: 1, label: "Year 1", courses: [
+        { id: "CPS109", name: "Computer Science I", roadmap: ["Variables", "Control Structures", "Functions", "Intro to OOP"] },
+        { id: "CPS209", name: "Computer Science II", roadmap: ["Advanced OOP", "Inheritance", "Polymorphism", "Exception Handling"] },
+        { id: "MTH110", name: "Discrete Math I", roadmap: ["Logic", "Set Theory", "Relations", "Boolean Algebra"] },
+        { id: "MTH207", name: "Calculus and Computational Methods I", roadmap: ["Limits", "Derivatives", "Integrals"] },
+        { id: "CPS213", name: "Computer Organization I", roadmap: ["Number Systems", "Digital Logic", "Microprocessors"] }
+      ] },
+      { id: 2, label: "Year 2", courses: [
+        { id: "CPS305", name: "Data Structures", roadmap: ["Arrays & Lists", "Stacks & Queues", "Trees", "Big-O Analysis"] },
+        { id: "CPS310", name: "Computer Organization II", roadmap: ["Memory Systems", "I/O", "Assembly"] },
+        { id: "CPS393", name: "Introduction to C and UNIX", roadmap: ["C Pointers", "Structs", "UNIX Commands", "Shell Scripting"] },
+        { id: "CPS420", name: "Discrete Structures", roadmap: ["Graph Theory", "Combinatorics", "Automata Theory"] },
+        { id: "MTH108", name: "Linear Algebra", roadmap: ["Matrices", "Vectors", "Eigenvalues"] }
+      ] },
+      { id: 3, label: "Year 3", courses: [
+        { id: "CPS506", name: "Comparative Languages", roadmap: ["Paradigms", "Functional", "Logic", "Concurrency"] },
+        { id: "CPS530", name: "Web Systems Development", roadmap: ["HTML/CSS", "JavaScript", "Backend Frameworks"] },
+        { id: "CPS590", name: "Operating Systems I", roadmap: ["Processes", "Threads", "Scheduling", "Memory Management"] },
+        { id: "CPS616", name: "Algorithms", roadmap: ["Divide & Conquer", "Dynamic Programming", "Greedy Algorithms"] },
+        { id: "CPS633", name: "Computer Security", roadmap: ["Cryptography", "Network Security", "Application Security"] }
+      ] },
+      { id: 4, label: "Year 4", courses: [
+        { id: "CPS40A", name: "Thesis Project", roadmap: ["Proposal", "Literature Review", "Implementation", "Defense"] },
+        { id: "CPS706", name: "Computer Networks I", roadmap: ["OSI Model", "TCP/IP", "Routing"] },
+        { id: "CPS721", name: "Artificial Intelligence I", roadmap: ["Search", "Logic", "Machine Learning/AI"] },
+        { id: "CPS842", name: "Information Retrieval", roadmap: ["Search Engines", "Text Processing", "Ranking"] }
+      ] }
     ]
   },
   "Biology": {
@@ -315,10 +340,33 @@ export const programRoadmaps = {
   "Mechanical Engineering": {
     title: "Bachelor of Engineering (Mechanical)",
     years: [
-      { id: 1, label: "Year 1", courses: [{ id: "MEC100", name: "Engineering Graphics", roadmap: ["CAD Basics", "Orthographic Projection", "Tolerancing", "3D Modeling"] }] },
-      { id: 2, label: "Year 2", courses: [{ id: "MEC200", name: "Thermodynamics", roadmap: ["Laws of Thermo", "Heat Engines", "Refrigeration", "Power Cycles"] }] },
-      { id: 3, label: "Year 3", courses: [{ id: "MEC300", name: "Fluid Mechanics", roadmap: ["Fluid Properties", "Navier-Stokes", "Pipe Flow", "Pumps & Turbines"] }] },
-      { id: 4, label: "Year 4", courses: [{ id: "MEC400", name: "Machine Design", roadmap: ["Stress Analysis", "Fatigue", "Gears & Bearings", "System Design"] }] }
+      { id: 1, label: "Year 1", courses: [
+        { id: "MEC100", name: "Engineering Graphics", roadmap: ["CAD Basics", "Orthographic Projection", "Tolerancing", "3D Modeling"] },
+        { id: "MTH140", name: "Calculus I", roadmap: ["Limits", "Derivatives", "Integration"] },
+        { id: "PCS211", name: "Physics: Mechanics", roadmap: ["Kinematics", "Dynamics", "Force"] },
+        { id: "CHY102", name: "General Chemistry", roadmap: ["Atoms", "Molecules", "Reactions"] },
+        { id: "CEN100", name: "Intro to Engineering", roadmap: ["Ethics", "Design", "Profession"] }
+      ] },
+      { id: 2, label: "Year 2", courses: [
+        { id: "MEC200", name: "Thermodynamics", roadmap: ["Laws of Thermo", "Heat Engines", "Refrigeration", "Power Cycles"] },
+        { id: "MTH312", name: "Differential Equations and Vector Calculus", roadmap: ["ODEs", "Vector Fields"] },
+        { id: "MEC323", name: "Statics and Mechanics of Materials", roadmap: ["Stress/Strain", "Torsion", "Bending"] },
+        { id: "MEC325", name: "Intro to Engineering Design", roadmap: ["Design Process", "Prototyping"] },
+        { id: "ELE202", name: "Electric Circuit Analysis", roadmap: ["Kirchhoff's Laws", "AC/DC Circuits"] }
+      ] },
+      { id: 3, label: "Year 3", courses: [
+        { id: "MEC300", name: "Fluid Mechanics", roadmap: ["Fluid Properties", "Navier-Stokes", "Pipe Flow", "Pumps & Turbines"] },
+        { id: "MEC511", name: "Thermodynamics and Heat Transfer", roadmap: ["Conduction", "Convection", "Radiation"] },
+        { id: "MEC613", name: "Machine Design I", roadmap: ["Failure Theories", "Shafts", "Gears"] },
+        { id: "MEC701", name: "Heat Transfer", roadmap: ["Heat Exchangers", "Transient Heat"] },
+        { id: "MEC616", name: "Manufacturing Processes", roadmap: ["Machining", "Casting", "Welding"] }
+      ] },
+      { id: 4, label: "Year 4", courses: [
+        { id: "MEC400", name: "Capstone Design Project", roadmap: ["Requirements", "Design", "Building", "Testing"] },
+        { id: "MEC816", name: "Finite Element Analysis", roadmap: ["Meshing", "1D/2D Elements", "Solid Mechanics"] },
+        { id: "MEC810", name: "Thermal Power Generation", roadmap: ["Gas Turbines", "Steam Power Plants"] },
+        { id: "MEC813", name: "Mechatronics System Design", roadmap: ["Sensors", "Actuators", "Controllers"] }
+      ] }
     ]
   },
   "Architectural Science": {
