@@ -5,6 +5,9 @@ import App from './App.jsx'
 import { BrowserRouter, Route, Routes } from 'react-router'
 import { ProspectiveStudentLayout, NewStudentLayout, CurrentStudentLayout } from './layouts/StudentLayouts'
 import PlaceholderPage from './components/pages/PlaceholderPage'
+import ProgramsPage from './components/pages/ProgramsPage'
+import ProgramsRoadmapPage from './components/pages/ProgramsRoadmapPage'
+import CourseReviewPage from './components/pages/CourseReviewPage'
 import CurrentStudentDashboard from './components/pages/CurrentStudentDashboard'
 import CoursesPage from './components/pages/CoursesPage'
 import { Toaster } from "@/components/ui/sonner"
@@ -19,7 +22,9 @@ createRoot(document.getElementById('root')).render(
         
         <Route path="/prospective-student" element={<ProspectiveStudentLayout />}>
           <Route index element={<PlaceholderPage title="Prospective Student Dashboard" />} />
-          <Route path="programs" element={<PlaceholderPage title="Programs" />} />
+          <Route path="programs" element={<ProgramsPage />} />
+          <Route path="programs-roadmap" element={<ProgramsRoadmapPage />} />
+          <Route path="course-reviews" element={<CourseReviewPage />} />
           <Route path="admissions" element={<PlaceholderPage title="Admissions Process" />} />
           <Route path="financial-aid" element={<PlaceholderPage title="Financial Aid" />} />
         </Route>

@@ -3,6 +3,7 @@ import ProfileLayout from "./ProfileLayout";
 const prospectiveLinks = [
     { to: "/prospective-student", label: "Dashboard" },
     { to: "/prospective-student/programs", label: "Programs" },
+    { to: "/prospective-student/programs-roadmap", label: "Programs Roadmap" },
     { to: "/prospective-student/admissions", label: "Admissions" },
     { to: "/prospective-student/financial-aid", label: "Financial Aid" },
 ];
