@@ -15,6 +15,7 @@ import MySchedulePage from './components/pages/MySchedulePage'
 import { Toaster } from "@/components/ui/sonner"
 import { ScheduleProvider } from "@/context/ScheduleContext"
 import NewStudentDashboard from './components/pages/NewStudentDashboard'
+import GraduationTrackerPage from './components/pages/GraduationTrackerPage'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -45,7 +46,7 @@ createRoot(document.getElementById('root')).render(
           <Route path="my-schedule" element={<MySchedulePage />} />
           <Route path="courses" element={<CoursesPage />} />
           <Route path="financial-hub" element={<PlaceholderPage title="Financial Hub" />} />
-          <Route path="graduation-tracker" element={<PlaceholderPage title="Graduation Tracker" />} />
+          <Route path="graduation-tracker" element={<GraduationTrackerPage />} />
           <Route path="settings" element={<PlaceholderPage title="Settings" />} />
         </Route>
       </Routes>
