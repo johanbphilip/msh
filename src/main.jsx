@@ -14,6 +14,7 @@ import CoursesPage from './components/pages/CoursesPage'
 import MySchedulePage from './components/pages/MySchedulePage'
 import { Toaster } from "@/components/ui/sonner"
 import { ScheduleProvider } from "@/context/ScheduleContext"
+import NewStudentDashboard from './components/pages/NewStudentDashboard'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
@@ -32,7 +33,7 @@ createRoot(document.getElementById('root')).render(
         </Route>
 
         <Route path="/new-student" element={<NewStudentLayout />}>
-          <Route index element={<PlaceholderPage title="New Student Dashboard" />} />
+          <Route index element={<NewStudentDashboard />} />
           <Route path="orientation" element={<PlaceholderPage title="Orientation" />} />
           <Route path="course-registration" element={<PlaceholderPage title="Course Registration" />} />
           <Route path="housing" element={<PlaceholderPage title="Housing" />} />
